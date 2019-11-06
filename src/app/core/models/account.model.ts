@@ -1,3 +1,5 @@
+import { AccountStatusId } from './accountStatusId';
+
 export class Account {
   Id: number;
   FirstName: string;
@@ -6,5 +8,5 @@ export class Account {
   PhoneNumber: string;
   AmountDue: number;
   PaymentDueDate: Date;
-  AccountStatusId: number;
+  AccountStatusId: AccountStatusId;
 }
