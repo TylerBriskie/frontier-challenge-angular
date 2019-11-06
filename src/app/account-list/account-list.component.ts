@@ -11,14 +11,13 @@ import { AccountService } from '../core/services/account.service';
   styleUrls: ['./account-list.component.css']
 })
 export class AccountListComponent implements OnInit {
-  accounts: Account[];
+  accounts: Account[] = [];
   constructor(private accountService: AccountService) { }
 
   ngOnInit() {
     this.accountService.getAccounts()
       .subscribe((accounts) => {
         this.accounts = accounts;
-        console.log('accounts retrieved: ', this.accounts)
       }, (err) => {
         console.log('an error occurred retrieving the accounts from the server: ', err);
       });
