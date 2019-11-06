@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Account } from '../core/models/account.model';
+import { AccountStatusId } from '../core/models/accountStatusId';
 import { AccountService } from '../core/services/account.service';
 
 
@@ -10,6 +11,9 @@ import { AccountService } from '../core/services/account.service';
   styleUrls: ['./account-list.component.css']
 })
 export class AccountListComponent implements OnInit {
+  activeFilter = {AccountStatusId: 0};
+  inactiveFilter = { AccountStatusId: 1};
+  overdueFilter = { AccountStatusId: 2};
 
   accounts: Account[];
   constructor(private accountService: AccountService) { }
@@ -18,7 +22,7 @@ export class AccountListComponent implements OnInit {
     this.accountService.getAccounts()
       .subscribe((accounts) => {
         this.accounts = accounts;
-        console.log('accounts retrieved: ', this.accounts);
+        console.log('accounts retrieved: ', this.accounts)
       }, (err) => {
         console.log('an error occurred retrieving the accounts from the server: ', err);
       });
