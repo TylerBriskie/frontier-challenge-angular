@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import {HttpClient} from '@angular/common/http';
+import { AccountStatusPipe } from './account-status.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
-    AccountListComponent
+    AccountListComponent,
+    AccountStatusPipe
   ],
   imports: [
     HttpClientModule,

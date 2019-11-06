@@ -11,10 +11,6 @@ import { AccountService } from '../core/services/account.service';
   styleUrls: ['./account-list.component.css']
 })
 export class AccountListComponent implements OnInit {
-  activeFilter = {AccountStatusId: 0};
-  inactiveFilter = { AccountStatusId: 1};
-  overdueFilter = { AccountStatusId: 2};
-
   accounts: Account[];
   constructor(private accountService: AccountService) { }
 
